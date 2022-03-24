@@ -16,7 +16,7 @@ const calculate = (price, consumption, distance) => {
 }
 
 const calculateCompensation = (distance) => {
-  return 0.46 * distance;
+  return formatToTwoDecimals(0.46 * distance);
 }
 
 const getRandomInt = (max) => {
