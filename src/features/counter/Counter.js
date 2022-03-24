@@ -121,7 +121,7 @@ export function Counter() {
         {getEqualsTo(outcome)}
       </div>
       <div className="row">
-        ja päälle vielä kilometrikorvausta: {compensation} &euro;
+        ja päälle vielä {compensation} &euro; kilometrikorvausta!
       </div>
     </div>
   );
