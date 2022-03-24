@@ -15,6 +15,10 @@ const calculate = (price, consumption, distance) => {
   return formatted;
 }
 
+const calculateCompensation = (distance) => {
+  return 0.46 * distance;
+}
+
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * max);
 }
@@ -46,6 +50,7 @@ export function Counter() {
   const currentConsumption = useSelector(consumptionSelector);
   const currentDistance = useSelector(distanceSelector);
   const outcome = calculate(currentPrice, currentConsumption, currentDistance);
+  const compensation = calculateCompensation(currentDistance);
   const dispatch = useDispatch();
 
   return (
@@ -114,6 +119,9 @@ export function Counter() {
       </div>
       <div className="row">
         {getEqualsTo(outcome)}
+      </div>
+      <div className="row">
+        ja päälle vielä kilometrikorvausta: {compensation} &euro;
       </div>
     </div>
   );
